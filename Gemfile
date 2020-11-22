@@ -24,9 +24,15 @@ gem 'jbuilder', '~> 2.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-
+gem 'faker'
+gem 'simple_form'
+gem 'cloudinary', '~> 1.16.0'
+gem 'autoprefixer-rails'
+gem 'font-awesome-sass', '~> 5.6.1'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'dotenv-rails', groups: [:development, :test]
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
