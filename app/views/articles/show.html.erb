@@ -1,8 +1,16 @@
+
+<div class="container">
 <h1><%= @article.title %></h1>
 <p><%=  @article.content %></p>
 <% @article.photos.each do |photo| %>
-<%= cl_image_tag photo.key  %>
+<%= cl_image_tag photo.key, style: "max-width: 100%" %>
 <% end %>
+
+<%= @article.rich_body %>
+
+</div>
+<% if user_signed_in? %>
 
 <%= link_to 'Back to Home', articles_path  %>
 <%= link_to 'Edit Article', edit_article_path(@article.id)  %>
+<% end %>

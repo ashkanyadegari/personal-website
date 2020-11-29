@@ -1,6 +1,7 @@
 <%= simple_form_for(@article) do |f| %>
 <%= f.input :title %>
-<%= f.input :content %>
+<%= f.input :content, placeholder: 'This will be displayed as lead text' %>
+<%= f.rich_text_area :rich_body %>
 <%= f.input :photos, as: :file, input_html: { multiple: true } %>
 
 <%= f.submit %>

@@ -1,0 +1,51 @@
+.article-card {
+  width: 100%;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 3px 3px 5px rgba(150,150,150,0.1);
+  margin-bottom: 35px;
+  padding: 5px 5px;
+}
+
+.article-card:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  transition: width .5s ease;
+}
+
+.article-banner {
+   max-width: 100%;
+}
+
+.article-title {
+  margin-top: 10px;
+  margin-bottom: 0px;
+
+}
+
+.article-description {
+  font-size: 14px;
+  font-family: montserrat, sans-serif;
+
+}
+
+.article-card-info {
+  position: relative;
+  margin-left: 10px;
+}
+
+.date {
+  position: absolute;
+  right: 25px;
+  top: -5px;
+  font-size: 12px;
+}
+
+.article-banner {
+  border-radius: 8px;
+}
+
+.card-image {
+  border-radius: 10px;
+  max-width: 100%;
+}

@@ -1,0 +1,34 @@
+/* Category */
+
+.categories {
+  text-align: center;
+}
+.btn-category {
+  padding: 8px 35px;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 6px;
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+  margin-bottom: 10px;
+  transition: 0.5s;
+}
+
+.btn-category:hover {
+  opacity: 0.6;
+}
+
+.btn-category-active {
+  background-color: black;
+  color: white;
+}
+
+.btn-category-active:hover {
+  background-color: white;
+  color: black;
+}
+
+/* btn-category btn-category-active" href="#">All</a>
+      <a class="btn-category" href="#">Bootcamp</a>
+      <a class="btn-category" href="#">Coding</a>
+      <a class="btn-category" */

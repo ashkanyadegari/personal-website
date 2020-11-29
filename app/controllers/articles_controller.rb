@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @articles = Article.all
   end
@@ -16,7 +17,7 @@ class ArticlesController < ApplicationController
     if @article.save
       redirect_to article_path(@article)
     else
-      render new
+      render :new
     end
   end
 
@@ -36,7 +37,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :content, photos: [])
+    params.require(:article).permit(:title, :content, :rich_body, photos: [])
   end
 
   def set_article

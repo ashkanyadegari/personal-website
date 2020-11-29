@@ -1,0 +1,15 @@
+    <% @articles.each do |article| %>
+    <%= link_to article_path(article) do  %>
+    <div class="article-card">
+      <%= cl_image_tag article.photos[0].key, width: 800, height: 300, crop: :fill, class: "card-image" %>
+      <div class="article-card-info">
+      <h2 class="article-title"><%= article.title %></h2>
+      <p class="article-description"><%= article.content %></p>
+      <p class="date"><%= article.created_at.strftime("%F") %></p>
+      </div>
+    </div>
+    <% end %>
+    <% if user_signed_in? %>
+    <%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you sure? '}  %>
+    <% end %>
+    <% end %>
