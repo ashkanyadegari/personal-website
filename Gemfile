@@ -33,6 +33,9 @@ gem 'font-awesome-sass', '~> 5.6.1'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'devise'
+gem 'pundit'
+gem 'pg_search', '~> 2.3.0'
+gem 'acts-as-taggable-on', '~> 6.0'
 
 
 group :development, :test do

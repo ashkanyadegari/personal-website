@@ -24,7 +24,9 @@
         <% if user_signed_in? %>
             <%= link_to 'me', root_path  %>
             <%= link_to 'blog', articles_path  %>
-            <%= link_to 'Create a post', new_article_path  %>
+            <% if policy(Article).create? %>
+              <%= link_to 'Create a post', new_article_path  %>
+            <% end %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
         </li>
       <% else %>

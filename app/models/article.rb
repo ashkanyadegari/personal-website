@@ -4,4 +4,12 @@ class Article < ApplicationRecord
   validates :photos, presence: true
   validates :title, presence: true
   validates :rich_body, presence: true
+  acts_as_taggable_on :tags
+
+  include PgSearch::Model
+  pg_search_scope :search_by_title_and_body,
+    against: [ :title, :content ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end

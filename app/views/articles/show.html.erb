@@ -9,7 +9,7 @@
 <%= @article.rich_body %>
 
 </div>
-<% if user_signed_in? %>
+<% if policy(Article).update? %>
 
 <%= link_to 'Back to Home', articles_path  %>
 <%= link_to 'Edit Article', edit_article_path(@article.id)  %>
