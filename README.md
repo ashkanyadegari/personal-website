@@ -1,24 +1,26 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple personal blog running on ruby on rails. Hopefully to inspire others to create their own blog from scratch and continue coding after that.
 
-Things you may want to cover:
+In order to run it locally:
 
-* Ruby version
+```
+bundle install
+yarn install
+rails s
+```
 
-* System dependencies
+Hero content is hard-coded and can be adjusted in index.html.erb
 
-* Configuration
+Authentication is with devise, and authorization is with pundit. At the moment only an admin can CRUD content. Permissions can be changed in the policy.
 
-* Database creation
 
-* Database initialization
+##Important
 
-* How to run the test suite
+Images are currently being managed via active storage and cloudinary. In order to have image upload working, make sure to set up an cloudinary account and put the key in .env file
 
-* Services (job queues, cache servers, search engines, etc.)
+such as:
+```
+CLOUDINARY_URL=cxxxxxxxxxxxxxxx
 
-* Deployment instructions
-
-* ...
+```
