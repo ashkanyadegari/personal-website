@@ -15,25 +15,14 @@
   </head>
 
   <body>
-    <div class="navbar">
+    <div class="navbar mt-2">
       <div class="navbar-logo">
-        <img class="img-small" src="https://source.unsplash.com/random/80x80" alt="my-profile-image">
-        <h3>Ashkan Yadegari</h3>
+        <img class="img-small" src="https://res.cloudinary.com/dioxzidenl/image/upload/v1608467073/0_ks2enc.jpg" alt="my-profile-image">
+        <%= link_to 'Ashkan Yadegari', root_path, class: "mx-2"  %>
       </div>
       <div class="navbar-links">
-        <% if user_signed_in? %>
-            <%= link_to 'me', root_path  %>
-            <%= link_to 'blog', articles_path  %>
-            <% if policy(Article).create? %>
-              <%= link_to 'Create a post', new_article_path  %>
-            <% end %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-        </li>
-      <% else %>
           <%= link_to 'me', root_path  %>
           <%= link_to 'blog', articles_path  %>
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-      <% end %>
       </div>
     </div>
         <p class="notice"><%= notice %></p>

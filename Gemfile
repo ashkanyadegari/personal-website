@@ -36,6 +36,7 @@ gem 'devise'
 gem 'pundit'
 gem 'pg_search', '~> 2.3.0'
 gem 'acts-as-taggable-on', '~> 6.0'
+gem 'rails_admin', '~> 2.0'
 
 
 group :development, :test do

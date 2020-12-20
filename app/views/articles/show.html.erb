@@ -1,16 +1,20 @@
 
-<div class="container">
-<h1><%= @article.title %></h1>
-<p><%=  @article.content %></p>
-<% @article.photos.each do |photo| %>
-<%= cl_image_tag photo.key, style: "max-width: 100%" %>
-<% end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path(@article.photos[0].key) %>);">
+  <div class="container">
+    <h1><%= @article.title %></h1>
+    <p><%=  @article.content %></p>
+  </div>
+</div>
 
+<div class="container">
 <%= @article.rich_body %>
 
-</div>
+
 <% if policy(Article).update? %>
 
 <%= link_to 'Back to Home', articles_path  %>
 <%= link_to 'Edit Article', edit_article_path(@article.id)  %>
 <% end %>
+
+</div>
+

@@ -2,26 +2,40 @@
     <div id="me" class="card-section">
       <h1>ASHKAN YADEGARI</h1>
       <h4>FULL STACK DEVELOPER - SHANGHAI</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque fuga, doloribus eveniet enim reiciendis ea dolor dicta blanditiis. Vero sunt laudantium quos dolorum, harum reprehenderit, unde, quas consequuntur deserunt consectetur officia nobis facere nisi amet officiis dolorem fuga quidem vitae dolor iusto! Accusantium odit culpa animi totam ipsum, delectus autem!</p>
-      <h2>TECHNICAL KNOWLEDGE</h2>
-      <p>HTML/CSS, RUBY, JAVASCRIPT, PYTHON, ExpressJS, ReactJS, NodeJS</p>
+      <p><%= @profile.content %></p>
+      <h2>Tech Stack</h2>
+      <p><%= @skills.content %></p>
       <ul>
-        <li><a class="social-tags" href="#"><i class="fab fa-linkedin"></i></a></li>
-        <li><a class="social-tags" href="#"><i class="fab fa-github-square"></i></a></li>
-        <li><a class="social-tags" href="#"><i class="fab fa-instagram-square"></i></a></li>
+        <li><a class="social-tags" href="linkedin.com/in/ashkanyadegari"><i class="fab fa-linkedin"></i></a></li>
+        <li><a class="social-tags" href="github.com/ashkanyadegari"><i class="fab fa-github-square"></i></a></li>
       </ul>
     </div>
 
     <div class="card-section">
-      <h2 id="blog">@posts = Article.all</h2>
+      <h2 id="blog">My Projects</h2>
     </div>
-    <div class="categories">
-      <a class="btn-category btn-category-active" href="#">All</a>
-      <a class="btn-category" href="#">Bootcamp</a>
-      <a class="btn-category" href="#">Coding</a>
-      <a class="btn-category" href="#">Thoughts</a>
+      <div class="cards">
+        <% @projects.each do |project| %>
+            <%= link_to article_path(project) do  %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(project.photos[0].key) %>)">
+            <%= project.title %>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
+
+
+
+    <div class="card-section">
+      <h2 id="blog">Article.last(3)</h2>
+      <p>Read about my journey into the tech world. Stories, Interviews and Tutorials.</p>
+    </div>
+    <%= render 'components/articles' %>
+    <div class="card-section">
+
+      <h2 id="blog"><%= link_to 'Read More', articles_path %></h2>
     </div>
 
-    <%= render 'components/articles' %>
+
 
   </div>
