@@ -9,12 +9,5 @@
 <div class="container">
 <%= @article.rich_body %>
 
-
-<% if policy(Article).update? %>
-
-<%= link_to 'Back to Home', articles_path  %>
-<%= link_to 'Edit Article', edit_article_path(@article.id)  %>
-<% end %>
-
 </div>
 
